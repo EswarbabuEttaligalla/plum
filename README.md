@@ -16,17 +16,41 @@ Given medical documents (bills, prescriptions, reports), extract structured data
 ## Architecture Diagram
 
 ```mermaid
-flowchart LR
-	U[User Browser] -->|Upload| F(Frontend - Next.js)
-	F -->|Create Claim / Upload| B(Backend - FastAPI)
-	B --> S[Storage (SQLite + ./data/uploads)]
-	B --> O[OCR Service (tesseract or text read)]
-	B --> G[Extractor (GPT / fallback parser)]
-	G --> R[Rule Engine]
-	R --> D[Decision Service]
-	D --> S
-	F -->|Display| S
+flowchart TD
+
+A[User Uploads Documents] --> B[Next.js Frontend]
+
+B --> C[FastAPI Backend]
+
+C --> D[Document Storage]
+C --> E[OCR Service]
+
+E --> F[Text Extraction]
+
+F --> G[GPT-4o Extractor]
+F --> H[Fallback Parser]
+
+G --> I[Structured Claim Data]
+H --> I
+
+I --> J[Rule Engine]
+
+J --> K[Policy Validation]
+J --> L[Adjudication Rules]
+
+K --> M[Decision Engine]
+L --> M
+
+M --> N[APPROVED]
+M --> O[REJECTED]
+M --> P[MANUAL REVIEW]
+
+M --> Q[(SQLite Database)]
+
+Q --> R[Claim Dashboard]
+R --> B
 ```
+
 
 ## Technology Stack
 
