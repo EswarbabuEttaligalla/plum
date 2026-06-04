@@ -1,0 +1,5 @@
+doctor_name: Dr Demo
+doctor_reg: AB/12345/2024
+patient_name: Test Patient
+diagnosis: fever
+prescription: rest and hydration

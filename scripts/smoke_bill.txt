@@ -1,0 +1,4 @@
+diagnosis: fever
+consultation_fee: 1200
+bill_no: B-1001
+bill_date: 2026-05-01

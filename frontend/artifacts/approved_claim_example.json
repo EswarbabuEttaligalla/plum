@@ -1,0 +1,28 @@
+{
+  "claim_id": "CLM_DEMO0",
+  "decision": "REJECTED",
+  "status": "APPROVED",
+  "confidence_score": 0.817,
+  "approved_amount": 1000.0,
+  "rejection_reasons": [
+    "MISSING_DOCUMENTS",
+    "DOCTOR_REG_INVALID",
+    "NOT_MEDICALLY_NECESSARY"
+  ],
+  "reasons": [
+    "Original bill or receipt missing",
+    "Doctor registration number missing or invalid",
+    "No diagnosis found to justify treatment"
+  ],
+  "policy_rules_checked": [
+    "MISSING_DOCUMENTS",
+    "DOCTOR_REG_INVALID",
+    "NOT_MEDICALLY_NECESSARY"
+  ],
+  "deductions": {
+    "copay": 0.0,
+    "network_discount": 0.0
+  },
+  "cashless_approved": false,
+  "rejected_items": []
+}

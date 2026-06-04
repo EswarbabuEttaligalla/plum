@@ -1,0 +1,8 @@
+{
+  "claim_id": "CLM_APPROVED_EXAMPLE_2026-06-04",
+  "status": "APPROVED",
+  "confidence_score": 0.95,
+  "approved_amount": 1200,
+  "reasons": [],
+  "policy_rules_checked": ["DOCUMENTS_OK","MEMBER_COVERED"]
+}

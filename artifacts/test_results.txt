@@ -1,0 +1,19 @@
+Test runner results (deterministic rule engine) — full run
+
+TC001: APPROVED - PASS
+TC002: APPROVED - PASS
+TC003: REJECTED - PASS
+TC004: REJECTED - PASS
+TC005: REJECTED - PASS
+TC006: APPROVED - PASS
+TC007: REJECTED - PASS
+TC008: MANUAL_REVIEW - PASS
+TC009: REJECTED - PASS
+TC010: APPROVED - PASS
+
+Overall Accuracy: 10/10 (100.0%)
+
+Notes:
+- Tests executed via `python backend/app/tests_runner.py` with `PYTHONPATH` set to `backend`.
+- The rule engine enforces pre-authorization checks (`PRE_AUTH_MISSING`), computes deductions (`copay`, `network_discount`), sets `cashless_approved` for eligible network cashless requests, and provides `rejected_items` where applicable.
+

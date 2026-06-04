@@ -1,0 +1,14 @@
+{
+  "claim_id": "CLM_DEMO1780577682_2026-05-01",
+  "status": "REJECTED",
+  "confidence_score": 0.892,
+  "approved_amount": 1200,
+  "reasons": [
+    "Original bill or receipt missing",
+    "Doctor registration number missing or invalid"
+  ],
+  "policy_rules_checked": [
+    "MISSING_DOCUMENTS",
+    "DOCTOR_REG_INVALID"
+  ]
+}
