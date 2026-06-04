@@ -119,6 +119,44 @@ python -m app.tests_runner
 # or: python scripts/verify_endpoints.py  # exercises HTTP endpoints end-to-end
 ```
 
+## Test Validation
+
+The adjudication engine was validated against the provided `test_cases.json`.
+
+Results:
+
+| Metric           | Value |
+| ---------------- | ----- |
+| Total Test Cases | 10    |
+| Passed           | 10    |
+| Failed           | 0     |
+| Accuracy         | 100%  |
+
+Coverage includes:
+
+* Standard OPD consultations
+* Missing documents
+* Waiting period validation
+* Excluded treatments
+* Pre-authorization checks
+* Network hospital claims
+* Fraud/manual review scenarios
+* Alternative medicine coverage
+
+Command used:
+
+```bash
+$env:PYTHONPATH="backend"
+python -m app.tests_runner
+```
+
+Output:
+
+```
+Overall Accuracy: 10/10 (100.0%)
+```
+
+
 Save the runner output for review (we keep `artifacts/test_results.txt`).
 
 ## Deployment Instructions
