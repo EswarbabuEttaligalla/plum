@@ -152,6 +152,34 @@ Overall Accuracy: 10/10 (100.0%)
 
 Save the runner output for review (we keep `artifacts/test_results.txt`).
 
+
+## Screenshots
+
+The following screenshots demonstrate the complete end-to-end claim adjudication workflow implemented in this project.
+
+### Upload Claim
+
+Users can create a new OPD claim by providing member details and uploading supporting medical documents such as prescriptions, bills, and diagnostic reports.
+
+![Upload Page](artifacts/screenshots/upload_page.png)
+
+---
+
+### Claims Dashboard
+
+The claims dashboard provides a consolidated view of all submitted claims along with their current adjudication status, claim amount, and submission timestamp.
+
+![Claims List](artifacts/screenshots/claims_list.png)
+
+---
+
+### Claim Details
+
+The claim details page displays the adjudication outcome, confidence score, approved amount, decision reasons, and policy checks applied during evaluation.
+
+![Claim Details](artifacts/screenshots/claim_details.png)
+
+
 ## Deployment Instructions
 
 These steps produce a production-ready deployment split between a hosted backend and static frontend.
