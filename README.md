@@ -114,9 +114,8 @@ Refer to the backend FastAPI OpenAPI docs at `/docs` when running locally for fu
 The repository includes `test_cases.json` and a runner that evaluates the rule engine deterministically (bypasses LLM):
 
 ```bash
-cd backend
+$env:PYTHONPATH="backend"
 python -m app.tests_runner
-# or: python scripts/verify_endpoints.py  # exercises HTTP endpoints end-to-end
 ```
 
 ## Test Validation
@@ -143,12 +142,6 @@ Coverage includes:
 * Fraud/manual review scenarios
 * Alternative medicine coverage
 
-Command used:
-
-```bash
-$env:PYTHONPATH="backend"
-python -m app.tests_runner
-```
 
 Output:
 
@@ -184,6 +177,19 @@ Notes:
 - For production, migrate from SQLite to a managed RDBMS and update database config.
 - Store uploaded documents on cloud storage (S3/GCS) instead of local disk.
 
+## Assumptions
+
+Key assumptions used in this implementation include:
+
+* Claims must contain a valid member identifier.
+* OCR text quality is sufficient for information extraction.
+* GPT-4o extraction is optional; a deterministic fallback extractor is available.
+* SQLite is used for development and PostgreSQL is recommended for production.
+* Uploaded files are stored locally for the MVP and should be moved to cloud storage in production.
+
+For the complete list, see `assumptions.md`.
+
+
 ## Future Improvements
 
 - Replace fallback parsers with fine-tuned extractor models for higher accuracy
@@ -196,6 +202,20 @@ Notes:
 If anything fails during local setup, run the backend tests and `scripts/verify_endpoints.py` to reproduce the end-to-end flow and gather logs.
 
 ---
+
+## Submission Highlights
+
+* End-to-end OPD claim adjudication workflow
+* OCR-based document processing
+* GPT-4o integration with deterministic fallback extraction
+* Dynamic policy evaluation using policy_terms.json
+* Rule-driven adjudication engine
+* APPROVED / REJECTED / MANUAL_REVIEW decisions
+* Explainable reasoning for every decision
+* 100% accuracy on provided test_cases.json
+* FastAPI backend + Next.js frontend
+* Deployment-ready architecture
+
 
 Next steps (performed in this run): created `demo_script.md`, `architecture.md`, and `artifacts/` files with examples and test outputs (not committed). See repository root for the new files.
 
