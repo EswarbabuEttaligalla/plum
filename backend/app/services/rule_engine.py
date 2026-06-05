@@ -32,7 +32,9 @@ class PolicyLoader:
     """
 
     def __init__(self, policy_path: Optional[str] = None, rules_path: Optional[str] = None):
-        base = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+        base = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "..")
+)
         self.policy_path = policy_path or os.path.join(base, "policy_terms.json")
         self.rules_path = rules_path or os.path.join(base, "adjudication_rules.md")
         self.policy = self._load_policy()
