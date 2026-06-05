@@ -260,7 +260,15 @@ class RuleEngine:
             copay_amt = consult_sum * (copay_pct / 100.0)
 
         # final approved after deductions
-        final_approved = max(0.0, approved_amount - copay_amt - network_discount_amt)
+        claim_total = float(claim.get("total_amount", 0.0))
+
+        final_approved = max(
+            0.0,
+            min(
+                claim_total,
+                approved_amount - copay_amt - network_discount_amt
+            )
+        )
 
         # compute rejected_items list
         rejected_items = [i.get("description") or "" for i in item_approvals if float(i.get("approved_amount", 0.0)) <= 0]
