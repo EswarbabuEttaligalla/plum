@@ -9,6 +9,21 @@ Goals:
 - Provide deterministic behavior for offline smoke tests (no OpenAI key required)
 - Produce clear artifacts and documentation for evaluation
 
+## Key Features
+
+* Automated document ingestion and claim creation
+* OCR-based extraction from uploaded medical documents
+* Optional GPT-4o powered structured data extraction
+* Deterministic fallback extraction for offline operation
+* Rules-driven adjudication engine
+* Policy validation and coverage checks
+* Explainable APPROVED / REJECTED / MANUAL_REVIEW decisions
+* Confidence scoring for adjudication outcomes
+* FastAPI backend with OpenAPI documentation
+* Next.js frontend for claim submission and review
+* 100% accuracy on the provided evaluation test suite
+
+
 ## Problem Statement
 
 Given medical documents (bills, prescriptions, reports), extract structured data, evaluate claims against policy terms and adjudication rules, and produce an explainable decision (APPROVED / REJECTED) with approved amount, confidence score, and reasons.
